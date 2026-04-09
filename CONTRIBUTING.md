@@ -20,7 +20,7 @@ Thank you for your interest in contributing to jam-nodes! This guide will help y
 ### Prerequisites
 
 - Node.js 18+
-- pnpm 8+
+- npm 9+
 
 ### Setup
 
@@ -30,13 +30,13 @@ git clone https://github.com/anthropics/jam-nodes.git
 cd jam-nodes
 
 # Install dependencies
-pnpm install
+npm install
 
 # Build all packages
-pnpm build
+npm run build
 
 # Run tests
-pnpm test
+npm test
 ```
 
 ---
@@ -459,16 +459,16 @@ export const HubSpotCredential = defineOAuth2Credential({
 
 ```bash
 # Run all tests
-pnpm test
+npm test
 
 # Run tests in watch mode
-pnpm test:watch
+npm run test:watch
 
 # Run tests for a specific package
-pnpm --filter @jam-nodes/nodes test
+npm test --workspace=@jam-nodes/nodes
 
 # Run tests for a specific file
-pnpm test hunter
+npm test hunter
 ```
 
 ---
@@ -477,9 +477,9 @@ pnpm test hunter
 
 ### Before Submitting
 
-1. **Run tests:** `pnpm test`
-2. **Run linting:** `pnpm lint`
-3. **Build packages:** `pnpm build`
+1. **Run tests:** `npm test`
+2. **Run linting:** `npm run lint`
+3. **Build packages:** `npm run build`
 4. **Update exports:** Ensure new nodes are exported from index files
 
 ### PR Checklist
