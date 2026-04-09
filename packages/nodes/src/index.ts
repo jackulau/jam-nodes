@@ -196,6 +196,22 @@ export {
   readOutputSchema,
   updateInputSchema,
   updateOutputSchema,
+  // Airtable
+  airtableCreateRecordNode,
+  AirtableCreateRecordInputSchema,
+  AirtableCreateRecordOutputSchema,
+  airtableGetRecordsNode,
+  AirtableGetRecordsInputSchema,
+  AirtableGetRecordsOutputSchema,
+  airtableUpdateRecordNode,
+  AirtableUpdateRecordInputSchema,
+  AirtableUpdateRecordOutputSchema,
+  airtableDeleteRecordNode,
+  AirtableDeleteRecordInputSchema,
+  AirtableDeleteRecordOutputSchema,
+  AirtableRecordSchema,
+  AirtableSortSchema,
+  airtableCredential,
 } from './integrations/index.js'
 
 export type {
@@ -276,6 +292,17 @@ export type {
   ReadOutput,
   UpdateInput,
   UpdateOutput,
+  // Airtable
+  AirtableRecord,
+  AirtableSort,
+  AirtableCreateRecordInput,
+  AirtableCreateRecordOutput,
+  AirtableGetRecordsInput,
+  AirtableGetRecordsOutput,
+  AirtableUpdateRecordInput,
+  AirtableUpdateRecordOutput,
+  AirtableDeleteRecordInput,
+  AirtableDeleteRecordOutput,
 } from './integrations/index.js'
 
 // AI nodes
@@ -348,6 +375,10 @@ import {
   googleSheetsClearNode,
   googleSheetsReadNode,
   googleSheetsUpdateNode,
+  airtableCreateRecordNode as airtableCreateRecordNode_,
+  airtableGetRecordsNode as airtableGetRecordsNode_,
+  airtableUpdateRecordNode as airtableUpdateRecordNode_,
+  airtableDeleteRecordNode as airtableDeleteRecordNode_,
 } from './integrations/index.js'
 import {
   socialKeywordGeneratorNode,
@@ -407,6 +438,11 @@ export const builtInNodes = [
   googleSheetsClearNode,
   googleSheetsReadNode,
   googleSheetsUpdateNode,
+  // Airtable
+  airtableCreateRecordNode_,
+  airtableGetRecordsNode_,
+  airtableUpdateRecordNode_,
+  airtableDeleteRecordNode_,
   // AI
   socialKeywordGeneratorNode,
   draftEmailsNode,

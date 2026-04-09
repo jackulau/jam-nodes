@@ -275,3 +275,32 @@ export {
   type SlackSearchMatch,
   slackCredential,
 } from './slack/index.js'
+
+// Airtable integrations
+export {
+  airtableCreateRecordNode,
+  AirtableCreateRecordInputSchema,
+  AirtableCreateRecordOutputSchema,
+  type AirtableCreateRecordInput,
+  type AirtableCreateRecordOutput,
+  airtableGetRecordsNode,
+  AirtableGetRecordsInputSchema,
+  AirtableGetRecordsOutputSchema,
+  type AirtableGetRecordsInput,
+  type AirtableGetRecordsOutput,
+  airtableUpdateRecordNode,
+  AirtableUpdateRecordInputSchema,
+  AirtableUpdateRecordOutputSchema,
+  type AirtableUpdateRecordInput,
+  type AirtableUpdateRecordOutput,
+  airtableDeleteRecordNode,
+  AirtableDeleteRecordInputSchema,
+  AirtableDeleteRecordOutputSchema,
+  type AirtableDeleteRecordInput,
+  type AirtableDeleteRecordOutput,
+  AirtableRecordSchema,
+  AirtableSortSchema,
+  type AirtableRecord,
+  type AirtableSort,
+  airtableCredential,
+} from './airtable/index.js'

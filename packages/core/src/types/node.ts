@@ -84,6 +84,10 @@ export interface NodeCredentials {
     refreshToken: string
     expiresAt: number
   }
+  /** Airtable API credentials */
+  airtable?: {
+    accessToken: string
+  }
 }
 
 /**
