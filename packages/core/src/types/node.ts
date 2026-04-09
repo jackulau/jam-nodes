@@ -84,6 +84,14 @@ export interface NodeCredentials {
     refreshToken: string
     expiresAt: number
   }
+  /** HubSpot OAuth2 credentials */
+  hubspot?: {
+    clientId: string
+    clientSecret: string
+    accessToken: string
+    refreshToken?: string
+    expiresAt?: number
+  }
 }
 
 /**

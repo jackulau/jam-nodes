@@ -196,6 +196,27 @@ export {
   readOutputSchema,
   updateInputSchema,
   updateOutputSchema,
+  // HubSpot
+  hubspotCreateObjectNode,
+  HubSpotCreateObjectInputSchema,
+  HubSpotCreateObjectOutputSchema,
+  hubspotGetObjectNode,
+  HubSpotGetObjectInputSchema,
+  HubSpotGetObjectOutputSchema,
+  hubspotUpdateObjectNode,
+  HubSpotUpdateObjectInputSchema,
+  HubSpotUpdateObjectOutputSchema,
+  hubspotDeleteObjectNode,
+  HubSpotDeleteObjectInputSchema,
+  HubSpotDeleteObjectOutputSchema,
+  hubspotSearchObjectsNode,
+  HubSpotSearchObjectsInputSchema,
+  HubSpotSearchObjectsOutputSchema,
+  hubspotListMembershipNode,
+  HubSpotListMembershipInputSchema,
+  HubSpotListMembershipOutputSchema,
+  HubSpotObjectSchema,
+  hubspotCredential,
 } from './integrations/index.js'
 
 export type {
@@ -276,6 +297,20 @@ export type {
   ReadOutput,
   UpdateInput,
   UpdateOutput,
+  // HubSpot
+  HubSpotCreateObjectInput,
+  HubSpotCreateObjectOutput,
+  HubSpotGetObjectInput,
+  HubSpotGetObjectOutput,
+  HubSpotUpdateObjectInput,
+  HubSpotUpdateObjectOutput,
+  HubSpotDeleteObjectInput,
+  HubSpotDeleteObjectOutput,
+  HubSpotSearchObjectsInput,
+  HubSpotSearchObjectsOutput,
+  HubSpotListMembershipInput,
+  HubSpotListMembershipOutput,
+  HubSpotObject,
 } from './integrations/index.js'
 
 // AI nodes
@@ -348,6 +383,12 @@ import {
   googleSheetsClearNode,
   googleSheetsReadNode,
   googleSheetsUpdateNode,
+  hubspotCreateObjectNode as hubspotCreateObjectNode_,
+  hubspotGetObjectNode as hubspotGetObjectNode_,
+  hubspotUpdateObjectNode as hubspotUpdateObjectNode_,
+  hubspotDeleteObjectNode as hubspotDeleteObjectNode_,
+  hubspotSearchObjectsNode as hubspotSearchObjectsNode_,
+  hubspotListMembershipNode as hubspotListMembershipNode_,
 } from './integrations/index.js'
 import {
   socialKeywordGeneratorNode,
@@ -407,6 +448,13 @@ export const builtInNodes = [
   googleSheetsClearNode,
   googleSheetsReadNode,
   googleSheetsUpdateNode,
+  // HubSpot
+  hubspotCreateObjectNode_,
+  hubspotGetObjectNode_,
+  hubspotUpdateObjectNode_,
+  hubspotDeleteObjectNode_,
+  hubspotSearchObjectsNode_,
+  hubspotListMembershipNode_,
   // AI
   socialKeywordGeneratorNode,
   draftEmailsNode,
