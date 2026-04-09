@@ -275,3 +275,23 @@ export {
   type SlackSearchMatch,
   slackCredential,
 } from './slack/index.js'
+
+// Hunter integrations
+export {
+  hunterDomainSearchNode,
+  HunterDomainSearchInputSchema,
+  HunterDomainSearchOutputSchema,
+  type HunterDomainSearchInput,
+  type HunterDomainSearchOutput,
+  hunterEmailFinderNode,
+  HunterEmailFinderInputSchema,
+  HunterEmailFinderOutputSchema,
+  type HunterEmailFinderInput,
+  type HunterEmailFinderOutput,
+  hunterEmailVerifierNode,
+  HunterEmailVerifierInputSchema,
+  HunterEmailVerifierOutputSchema,
+  type HunterEmailVerifierInput,
+  type HunterEmailVerifierOutput,
+  hunterCredential,
+} from './hunter/index.js'

@@ -84,6 +84,10 @@ export interface NodeCredentials {
     refreshToken: string
     expiresAt: number
   }
+  /** Hunter.io API credentials */
+  hunter?: {
+    apiKey: string
+  }
 }
 
 /**

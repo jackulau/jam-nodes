@@ -196,6 +196,17 @@ export {
   readOutputSchema,
   updateInputSchema,
   updateOutputSchema,
+  // Hunter
+  hunterDomainSearchNode,
+  HunterDomainSearchInputSchema,
+  HunterDomainSearchOutputSchema,
+  hunterEmailFinderNode,
+  HunterEmailFinderInputSchema,
+  HunterEmailFinderOutputSchema,
+  hunterEmailVerifierNode,
+  HunterEmailVerifierInputSchema,
+  HunterEmailVerifierOutputSchema,
+  hunterCredential,
 } from './integrations/index.js'
 
 export type {
@@ -276,6 +287,13 @@ export type {
   ReadOutput,
   UpdateInput,
   UpdateOutput,
+  // Hunter
+  HunterDomainSearchInput,
+  HunterDomainSearchOutput,
+  HunterEmailFinderInput,
+  HunterEmailFinderOutput,
+  HunterEmailVerifierInput,
+  HunterEmailVerifierOutput,
 } from './integrations/index.js'
 
 // AI nodes
@@ -348,6 +366,9 @@ import {
   googleSheetsClearNode,
   googleSheetsReadNode,
   googleSheetsUpdateNode,
+  hunterDomainSearchNode as hunterDomainSearchNode_,
+  hunterEmailFinderNode as hunterEmailFinderNode_,
+  hunterEmailVerifierNode as hunterEmailVerifierNode_,
 } from './integrations/index.js'
 import {
   socialKeywordGeneratorNode,
@@ -407,6 +428,10 @@ export const builtInNodes = [
   googleSheetsClearNode,
   googleSheetsReadNode,
   googleSheetsUpdateNode,
+  // Hunter
+  hunterDomainSearchNode_,
+  hunterEmailFinderNode_,
+  hunterEmailVerifierNode_,
   // AI
   socialKeywordGeneratorNode,
   draftEmailsNode,
