@@ -18,7 +18,16 @@ export {
 
 export {
   twitterCredential,
+  linkedinCredential,
 } from './credentials.js';
+
+export {
+  linkedinCreatePostNode,
+  LinkedInCreatePostInputSchema,
+  LinkedInCreatePostOutputSchema,
+  type LinkedInCreatePostInput,
+  type LinkedInCreatePostOutput,
+} from './linkedin-create-post.js';
 
 export {
   twitterCreateTweetNode,

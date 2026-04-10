@@ -41,6 +41,14 @@ export interface NodeCredentials {
   forumScout?: {
     apiKey: string
   }
+  /** LinkedIn OAuth2 credentials (for posting) */
+  linkedin?: {
+    clientId?: string
+    clientSecret?: string
+    accessToken?: string
+    refreshToken?: string
+    expiresAt?: number
+  }
   /** DataForSEO API credentials */
   dataForSeo?: {
     /** Base64 encoded login:password */

@@ -34,3 +34,27 @@ export const twitterCredential = defineOAuth2Credential({
     bearerToken: z.string().optional(),
   }),
 });
+
+export const linkedinCredential = defineOAuth2Credential({
+  name: 'linkedin',
+  displayName: 'LinkedIn OAuth2',
+  documentationUrl: 'https://learn.microsoft.com/en-us/linkedin/',
+  config: {
+    authorizationUrl: 'https://www.linkedin.com/oauth/v2/authorization',
+    tokenUrl: 'https://www.linkedin.com/oauth/v2/accessToken',
+    scopes: [
+      'r_liteprofile',
+      'r_emailaddress',
+      'w_member_social',
+      'r_organization_social',
+      'w_organization_social',
+    ],
+  },
+  schema: z.object({
+    clientId: z.string(),
+    clientSecret: z.string(),
+    accessToken: z.string(),
+    refreshToken: z.string().optional(),
+    expiresAt: z.number().optional(),
+  }),
+});

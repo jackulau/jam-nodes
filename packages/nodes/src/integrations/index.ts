@@ -54,6 +54,12 @@ export {
   type LinkedInMonitorInput,
   type LinkedInMonitorOutput,
   type LinkedInPost,
+  linkedinCredential,
+  linkedinCreatePostNode,
+  LinkedInCreatePostInputSchema,
+  LinkedInCreatePostOutputSchema,
+  type LinkedInCreatePostInput,
+  type LinkedInCreatePostOutput,
 } from './social/index.js'
 
 // OpenAI integrations
