@@ -55,6 +55,6 @@ export const linkedinCredential = defineOAuth2Credential({
     clientSecret: z.string(),
     accessToken: z.string(),
     refreshToken: z.string().optional(),
-    expiresAt: z.number().optional(),
+    expiresAt: z.number(),
   }),
 });

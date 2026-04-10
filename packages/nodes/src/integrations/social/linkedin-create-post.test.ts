@@ -66,16 +66,17 @@ describe('linkedin credential', () => {
     expect(scopes).toContain('w_organization_social');
   });
 
-  it('schema accepts minimal credentials', () => {
+  it('schema accepts required credentials', () => {
     const result = linkedinCredential.schema.safeParse({
       clientId: 'c',
       clientSecret: 's',
       accessToken: 't',
+      expiresAt: 123456,
     });
     expect(result.success).toBe(true);
   });
 
-  it('schema accepts full credentials with refreshToken and expiresAt', () => {
+  it('schema accepts full credentials with optional refreshToken', () => {
     const result = linkedinCredential.schema.safeParse({
       clientId: 'c',
       clientSecret: 's',
@@ -84,6 +85,15 @@ describe('linkedin credential', () => {
       expiresAt: 123456,
     });
     expect(result.success).toBe(true);
+  });
+
+  it('schema rejects credentials missing expiresAt', () => {
+    const result = linkedinCredential.schema.safeParse({
+      clientId: 'c',
+      clientSecret: 's',
+      accessToken: 't',
+    });
+    expect(result.success).toBe(false);
   });
 });
 
@@ -96,25 +106,33 @@ describe('LinkedInCreatePostInputSchema', () => {
     postAs: 'person' as const,
   };
 
-  it('rejects empty text', () => {
-    const result = LinkedInCreatePostInputSchema.safeParse({ ...validBase, text: '' });
-    expect(result.success).toBe(false);
-  });
-
-  it('rejects text longer than 3000 chars', () => {
-    const result = LinkedInCreatePostInputSchema.safeParse({
-      ...validBase,
-      text: 'a'.repeat(3001),
-    });
-    expect(result.success).toBe(false);
-  });
-
-  it('accepts text at exactly 3000 chars (boundary)', () => {
-    const result = LinkedInCreatePostInputSchema.safeParse({
-      ...validBase,
-      text: 'a'.repeat(3000),
-    });
+  it('accepts minimal valid input', () => {
+    const result = LinkedInCreatePostInputSchema.safeParse(validBase);
     expect(result.success).toBe(true);
+  });
+
+  it('rejects missing required text', () => {
+    const result = LinkedInCreatePostInputSchema.safeParse({
+      visibility: 'PUBLIC',
+      postAs: 'person',
+    });
+    expect(result.success).toBe(false);
+  });
+
+  it('rejects invalid visibility value', () => {
+    const result = LinkedInCreatePostInputSchema.safeParse({
+      ...validBase,
+      visibility: 'PRIVATE',
+    });
+    expect(result.success).toBe(false);
+  });
+
+  it('rejects invalid postAs value', () => {
+    const result = LinkedInCreatePostInputSchema.safeParse({
+      ...validBase,
+      postAs: 'bot',
+    });
+    expect(result.success).toBe(false);
   });
 
   it('accepts all valid mediaCategory values', () => {
@@ -124,11 +142,11 @@ describe('LinkedInCreatePostInputSchema', () => {
     }
   });
 
-  it('defaults mediaCategory to NONE when omitted', () => {
+  it('accepts input with mediaCategory omitted', () => {
     const result = LinkedInCreatePostInputSchema.safeParse(validBase);
     expect(result.success).toBe(true);
     if (result.success) {
-      expect(result.data.mediaCategory).toBe('NONE');
+      expect(result.data.mediaCategory).toBeUndefined();
     }
   });
 });

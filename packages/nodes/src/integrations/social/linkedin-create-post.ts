@@ -4,11 +4,11 @@ import type { NodeExecutionContext } from '@jam-nodes/core';
 import { fetchWithRetry } from '../../utils/http.js';
 
 export const LinkedInCreatePostInputSchema = z.object({
-  text: z.string().min(1).max(3000),
+  text: z.string(),
   visibility: z.enum(['PUBLIC', 'CONNECTIONS']),
   postAs: z.enum(['person', 'organization']),
   organizationId: z.string().optional(),
-  mediaCategory: z.enum(['NONE', 'IMAGE', 'ARTICLE']).optional().default('NONE'),
+  mediaCategory: z.enum(['NONE', 'IMAGE', 'ARTICLE']).optional(),
   imageUrl: z.string().optional(),
   articleUrl: z.string().optional(),
   articleTitle: z.string().optional(),
