@@ -66,6 +66,10 @@ export interface NodeCredentials {
   devto?: {
     apiKey: string
   }
+  /** Lemlist API credentials */
+  lemlist?: {
+    apiKey: string
+  }
   /** WordPress Application Password credentials */
   wordpress?: {
     siteUrl: string

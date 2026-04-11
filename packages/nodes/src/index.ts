@@ -196,6 +196,29 @@ export {
   readOutputSchema,
   updateInputSchema,
   updateOutputSchema,
+  // Lemlist
+  lemlistAddLeadNode,
+  lemlistGetCampaignsNode,
+  lemlistGetActivityNode,
+  lemlistPauseLeadNode,
+  lemlistResumeLeadNode,
+  lemlistMarkAsInterestedNode,
+  LemlistLeadSchema,
+  LemlistCampaignSchema,
+  LemlistActivitySchema,
+  LemlistAddLeadInputSchema,
+  LemlistAddLeadOutputSchema,
+  LemlistGetCampaignsInputSchema,
+  LemlistGetCampaignsOutputSchema,
+  LemlistGetActivityInputSchema,
+  LemlistGetActivityOutputSchema,
+  LemlistPauseLeadInputSchema,
+  LemlistPauseLeadOutputSchema,
+  LemlistResumeLeadInputSchema,
+  LemlistResumeLeadOutputSchema,
+  LemlistMarkAsInterestedInputSchema,
+  LemlistMarkAsInterestedOutputSchema,
+  lemlistCredential,
 } from './integrations/index.js'
 
 export type {
@@ -276,6 +299,22 @@ export type {
   ReadOutput,
   UpdateInput,
   UpdateOutput,
+  // Lemlist
+  LemlistLead,
+  LemlistCampaign,
+  LemlistActivity,
+  LemlistAddLeadInput,
+  LemlistAddLeadOutput,
+  LemlistGetCampaignsInput,
+  LemlistGetCampaignsOutput,
+  LemlistGetActivityInput,
+  LemlistGetActivityOutput,
+  LemlistPauseLeadInput,
+  LemlistPauseLeadOutput,
+  LemlistResumeLeadInput,
+  LemlistResumeLeadOutput,
+  LemlistMarkAsInterestedInput,
+  LemlistMarkAsInterestedOutput,
 } from './integrations/index.js'
 
 // AI nodes
@@ -348,6 +387,12 @@ import {
   googleSheetsClearNode,
   googleSheetsReadNode,
   googleSheetsUpdateNode,
+  lemlistAddLeadNode,
+  lemlistGetCampaignsNode,
+  lemlistGetActivityNode,
+  lemlistPauseLeadNode,
+  lemlistResumeLeadNode,
+  lemlistMarkAsInterestedNode,
 } from './integrations/index.js'
 import {
   socialKeywordGeneratorNode,
@@ -407,6 +452,13 @@ export const builtInNodes = [
   googleSheetsClearNode,
   googleSheetsReadNode,
   googleSheetsUpdateNode,
+  // Lemlist
+  lemlistAddLeadNode,
+  lemlistGetCampaignsNode,
+  lemlistGetActivityNode,
+  lemlistPauseLeadNode,
+  lemlistResumeLeadNode,
+  lemlistMarkAsInterestedNode,
   // AI
   socialKeywordGeneratorNode,
   draftEmailsNode,
