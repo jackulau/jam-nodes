@@ -275,3 +275,13 @@ export {
   type SlackSearchMatch,
   slackCredential,
 } from './slack/index.js'
+
+// Dropcontact integrations
+export {
+  dropcontactEnrichNode,
+  DropcontactEnrichInputSchema,
+  DropcontactEnrichOutputSchema,
+  type DropcontactEnrichInput,
+  type DropcontactEnrichOutput,
+  dropcontactCredential,
+} from './dropcontact/index.js'

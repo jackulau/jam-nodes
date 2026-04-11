@@ -84,6 +84,10 @@ export interface NodeCredentials {
     refreshToken: string
     expiresAt: number
   }
+  /** Dropcontact API credentials (GDPR-compliant B2B enrichment) */
+  dropcontact?: {
+    apiKey: string
+  }
 }
 
 /**

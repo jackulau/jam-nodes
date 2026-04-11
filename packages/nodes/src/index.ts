@@ -196,6 +196,11 @@ export {
   readOutputSchema,
   updateInputSchema,
   updateOutputSchema,
+  // Dropcontact
+  dropcontactEnrichNode,
+  DropcontactEnrichInputSchema,
+  DropcontactEnrichOutputSchema,
+  dropcontactCredential,
 } from './integrations/index.js'
 
 export type {
@@ -276,6 +281,9 @@ export type {
   ReadOutput,
   UpdateInput,
   UpdateOutput,
+  // Dropcontact
+  DropcontactEnrichInput,
+  DropcontactEnrichOutput,
 } from './integrations/index.js'
 
 // AI nodes
@@ -348,6 +356,7 @@ import {
   googleSheetsClearNode,
   googleSheetsReadNode,
   googleSheetsUpdateNode,
+  dropcontactEnrichNode,
 } from './integrations/index.js'
 import {
   socialKeywordGeneratorNode,
@@ -407,6 +416,8 @@ export const builtInNodes = [
   googleSheetsClearNode,
   googleSheetsReadNode,
   googleSheetsUpdateNode,
+  // Dropcontact
+  dropcontactEnrichNode,
   // AI
   socialKeywordGeneratorNode,
   draftEmailsNode,
