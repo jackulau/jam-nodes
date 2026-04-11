@@ -99,6 +99,40 @@ describe('sendgrid schemas', () => {
     expect(result.success).toBe(false);
   });
 
+  it('rejects send-email with CRLF in subject', () => {
+    const result = SendgridSendEmailInputSchema.safeParse({
+      to: 'a@x.com',
+      from: 'b@x.com',
+      subject: 'Hello\r\nBcc: attacker@evil.com',
+      content: { type: 'text/plain', value: 'hi' },
+    });
+    expect(result.success).toBe(false);
+  });
+
+  it('rejects send-email with dynamicTemplateData but no templateId', () => {
+    const result = SendgridSendEmailInputSchema.safeParse({
+      to: 'a@x.com',
+      from: 'b@x.com',
+      subject: 's',
+      content: { type: 'text/plain', value: 'hi' },
+      dynamicTemplateData: { name: 'Ada' },
+    });
+    expect(result.success).toBe(false);
+  });
+
+  it('trims trailing whitespace from email fields', () => {
+    const result = SendgridSendEmailInputSchema.safeParse({
+      to: '  trimmed@x.com  ',
+      from: 'b@x.com',
+      subject: 's',
+      content: { type: 'text/plain', value: 'hi' },
+    });
+    expect(result.success).toBe(true);
+    if (result.success) {
+      expect(result.data.to).toBe('trimmed@x.com');
+    }
+  });
+
   it('accepts send-email with template', () => {
     const result = SendgridSendEmailInputSchema.safeParse({
       to: 'a@x.com',
@@ -273,6 +307,32 @@ describe('sendgrid_send_email', () => {
     expect(body.attachments[0].filename).toBe('hello.txt');
     expect(body.attachments[0].content).toBe('SGVsbG8=');
     expect(body.attachments[0].type).toBe('text/plain');
+    expect(body.attachments[0].disposition).toBeUndefined();
+    expect(body.attachments[0].content_id).toBeUndefined();
+  });
+
+  it('maps attachment disposition and contentId to snake_case', async () => {
+    const fetchMock = mockAccepted();
+    vi.stubGlobal('fetch', fetchMock);
+    await sendgridSendEmailNode.executor(
+      {
+        ...basicInput,
+        attachments: [
+          {
+            content: 'SGVsbG8=',
+            filename: 'logo.png',
+            type: 'image/png',
+            disposition: 'inline',
+            contentId: 'logo-cid',
+          },
+        ],
+      },
+      makeCtx()
+    );
+    const [, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    const body = JSON.parse(String(init.body));
+    expect(body.attachments[0].disposition).toBe('inline');
+    expect(body.attachments[0].content_id).toBe('logo-cid');
   });
 
   it('sets status to scheduled when sendAt provided', async () => {
@@ -535,6 +595,30 @@ describe('sendgrid_get_contacts', () => {
     const [, init] = fetchMock.mock.calls[0] as [string, RequestInit];
     const body = JSON.parse(String(init.body));
     expect(body.query).toBe("CONTAINS(list_ids, 'o\\'brien')");
+  });
+
+  it('escapes backslashes before quotes in listId', async () => {
+    const fetchMock = mockResult({ result: [], contact_count: 0 });
+    vi.stubGlobal('fetch', fetchMock);
+    await sendgridGetContactsNode.executor(
+      { listId: "path\\with\\backslash", limit: 50, offset: 0 },
+      makeCtx()
+    );
+    const [, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    const body = JSON.parse(String(init.body));
+    expect(body.query).toBe("CONTAINS(list_ids, 'path\\\\with\\\\backslash')");
+  });
+
+  it('escapes backslash followed by quote without double-escaping', async () => {
+    const fetchMock = mockResult({ result: [], contact_count: 0 });
+    vi.stubGlobal('fetch', fetchMock);
+    await sendgridGetContactsNode.executor(
+      { listId: "a\\'b", limit: 50, offset: 0 },
+      makeCtx()
+    );
+    const [, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    const body = JSON.parse(String(init.body));
+    expect(body.query).toBe("CONTAINS(list_ids, 'a\\\\\\'b')");
   });
 
   it('applies limit client-side', async () => {

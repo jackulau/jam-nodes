@@ -17,22 +17,34 @@ export const SendgridAttachmentSchema = z.object({
 
 // ----- sendgridSendEmail -----
 
-export const SendgridSendEmailInputSchema = z.object({
-  to: z.union([
-    z.string().email(),
-    z.array(z.string().email()).min(1, 'At least one recipient is required'),
-  ]),
-  from: z.string().email(),
-  subject: z.string().min(1, 'Subject is required'),
-  content: SendgridContentSchema,
-  cc: z.array(z.string().email()).optional(),
-  bcc: z.array(z.string().email()).optional(),
-  replyTo: z.string().email().optional(),
-  templateId: z.string().optional(),
-  dynamicTemplateData: z.record(z.string(), z.unknown()).optional(),
-  sendAt: z.number().int().positive().optional(),
-  attachments: z.array(SendgridAttachmentSchema).optional(),
-});
+const trimmedEmail = z.string().trim().email();
+
+export const SendgridSendEmailInputSchema = z
+  .object({
+    to: z.union([trimmedEmail, z.array(trimmedEmail).min(1, 'At least one recipient is required')]),
+    from: trimmedEmail,
+    subject: z
+      .string()
+      .min(1, 'Subject is required')
+      .regex(/^[^\r\n]*$/, 'Subject must not contain CR or LF characters'),
+    content: SendgridContentSchema,
+    cc: z.array(trimmedEmail).optional(),
+    bcc: z.array(trimmedEmail).optional(),
+    replyTo: trimmedEmail.optional(),
+    templateId: z.string().optional(),
+    dynamicTemplateData: z.record(z.string(), z.unknown()).optional(),
+    sendAt: z.number().int().positive().optional(),
+    attachments: z.array(SendgridAttachmentSchema).optional(),
+  })
+  .superRefine((value, ctx) => {
+    if (value.dynamicTemplateData !== undefined && value.templateId === undefined) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ['dynamicTemplateData'],
+        message: 'dynamicTemplateData requires templateId to be set',
+      });
+    }
+  });
 
 export const SendgridSendEmailOutputSchema = z.object({
   messageId: z.string(),
