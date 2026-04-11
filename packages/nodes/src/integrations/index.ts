@@ -275,3 +275,29 @@ export {
   type SlackSearchMatch,
   slackCredential,
 } from './slack/index.js'
+
+// SendGrid integrations
+export {
+  sendgridSendEmailNode,
+  SendgridSendEmailInputSchema,
+  SendgridSendEmailOutputSchema,
+  type SendgridSendEmailInput,
+  type SendgridSendEmailOutput,
+  sendgridCreateContactNode,
+  SendgridCreateContactInputSchema,
+  SendgridCreateContactOutputSchema,
+  type SendgridCreateContactInput,
+  type SendgridCreateContactOutput,
+  sendgridGetContactsNode,
+  SendgridGetContactsInputSchema,
+  SendgridGetContactsOutputSchema,
+  type SendgridGetContactsInput,
+  type SendgridGetContactsOutput,
+  SendgridContentSchema,
+  SendgridAttachmentSchema,
+  SendgridContactSchema,
+  type SendgridContent,
+  type SendgridAttachment,
+  type SendgridContact,
+  sendgridCredential,
+} from './sendgrid/index.js'

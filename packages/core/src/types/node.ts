@@ -84,6 +84,10 @@ export interface NodeCredentials {
     refreshToken: string
     expiresAt: number
   }
+  /** SendGrid API credentials */
+  sendgrid?: {
+    apiKey: string
+  }
 }
 
 /**
