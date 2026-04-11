@@ -84,6 +84,10 @@ export interface NodeCredentials {
     refreshToken: string
     expiresAt: number
   }
+  /** Notion API credentials */
+  notion?: {
+    apiToken: string
+  }
 }
 
 /**
