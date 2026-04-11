@@ -275,3 +275,23 @@ export {
   type SlackSearchMatch,
   slackCredential,
 } from './slack/index.js'
+
+// Clearbit integrations
+export {
+  clearbitCredential,
+  clearbitEnrichPersonNode,
+  ClearbitEnrichPersonInputSchema,
+  ClearbitEnrichPersonOutputSchema,
+  type ClearbitEnrichPersonInput,
+  type ClearbitEnrichPersonOutput,
+  clearbitEnrichCompanyNode,
+  ClearbitEnrichCompanyInputSchema,
+  ClearbitEnrichCompanyOutputSchema,
+  type ClearbitEnrichCompanyInput,
+  type ClearbitEnrichCompanyOutput,
+  clearbitCompanyAutocompleteNode,
+  ClearbitCompanyAutocompleteInputSchema,
+  ClearbitCompanyAutocompleteOutputSchema,
+  type ClearbitCompanyAutocompleteInput,
+  type ClearbitCompanyAutocompleteOutput,
+} from './clearbit/index.js'

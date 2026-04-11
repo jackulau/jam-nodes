@@ -41,6 +41,10 @@ export interface NodeCredentials {
   forumScout?: {
     apiKey: string
   }
+  /** Clearbit API credentials (for person and company enrichment) */
+  clearbit?: {
+    apiKey: string
+  }
   /** DataForSEO API credentials */
   dataForSeo?: {
     /** Base64 encoded login:password */

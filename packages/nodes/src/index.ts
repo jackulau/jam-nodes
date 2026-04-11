@@ -196,6 +196,17 @@ export {
   readOutputSchema,
   updateInputSchema,
   updateOutputSchema,
+  // Clearbit
+  clearbitCredential,
+  clearbitEnrichPersonNode,
+  ClearbitEnrichPersonInputSchema,
+  ClearbitEnrichPersonOutputSchema,
+  clearbitEnrichCompanyNode,
+  ClearbitEnrichCompanyInputSchema,
+  ClearbitEnrichCompanyOutputSchema,
+  clearbitCompanyAutocompleteNode,
+  ClearbitCompanyAutocompleteInputSchema,
+  ClearbitCompanyAutocompleteOutputSchema,
 } from './integrations/index.js'
 
 export type {
@@ -276,6 +287,13 @@ export type {
   ReadOutput,
   UpdateInput,
   UpdateOutput,
+  // Clearbit
+  ClearbitEnrichPersonInput,
+  ClearbitEnrichPersonOutput,
+  ClearbitEnrichCompanyInput,
+  ClearbitEnrichCompanyOutput,
+  ClearbitCompanyAutocompleteInput,
+  ClearbitCompanyAutocompleteOutput,
 } from './integrations/index.js'
 
 // AI nodes
@@ -348,6 +366,9 @@ import {
   googleSheetsClearNode,
   googleSheetsReadNode,
   googleSheetsUpdateNode,
+  clearbitEnrichPersonNode as clearbitEnrichPersonNode_,
+  clearbitEnrichCompanyNode as clearbitEnrichCompanyNode_,
+  clearbitCompanyAutocompleteNode as clearbitCompanyAutocompleteNode_,
 } from './integrations/index.js'
 import {
   socialKeywordGeneratorNode,
@@ -407,6 +428,10 @@ export const builtInNodes = [
   googleSheetsClearNode,
   googleSheetsReadNode,
   googleSheetsUpdateNode,
+  // Clearbit
+  clearbitEnrichPersonNode_,
+  clearbitEnrichCompanyNode_,
+  clearbitCompanyAutocompleteNode_,
   // AI
   socialKeywordGeneratorNode,
   draftEmailsNode,
