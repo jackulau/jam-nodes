@@ -183,6 +183,18 @@ export {
   WordPressPostSchema,
   WordPressMediaSchema,
   WordPressCredential,
+  // Instantly
+  instantlyAddLeadNode,
+  InstantlyAddLeadInputSchema,
+  InstantlyAddLeadOutputSchema,
+  instantlyCreateCampaignNode,
+  InstantlyCreateCampaignInputSchema,
+  InstantlyCreateCampaignOutputSchema,
+  instantlyGetAnalyticsNode,
+  InstantlyGetAnalyticsInputSchema,
+  InstantlyGetAnalyticsOutputSchema,
+  SequenceStepSchema,
+  instantlyCredential,
   // Google Sheets
   googleSheetsAppendNode,
   googleSheetsClearNode,
@@ -267,6 +279,14 @@ export type {
   WordPressMedia,
   WordPressUploadMediaInput,
   WordPressUploadMediaOutput,
+  // Instantly
+  InstantlyAddLeadInput,
+  InstantlyAddLeadOutput,
+  InstantlyCreateCampaignInput,
+  InstantlyCreateCampaignOutput,
+  InstantlyGetAnalyticsInput,
+  InstantlyGetAnalyticsOutput,
+  SequenceStep,
   // Google Sheets
   AppendInput,
   AppendOutput,

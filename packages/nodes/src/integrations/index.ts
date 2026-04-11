@@ -219,6 +219,28 @@ export {
   apifyCredential,
 } from './apify/index.js'
 
+// Instantly integrations
+export {
+  instantlyAddLeadNode,
+  InstantlyAddLeadInputSchema,
+  InstantlyAddLeadOutputSchema,
+  type InstantlyAddLeadInput,
+  type InstantlyAddLeadOutput,
+  instantlyCreateCampaignNode,
+  InstantlyCreateCampaignInputSchema,
+  InstantlyCreateCampaignOutputSchema,
+  type InstantlyCreateCampaignInput,
+  type InstantlyCreateCampaignOutput,
+  instantlyGetAnalyticsNode,
+  InstantlyGetAnalyticsInputSchema,
+  InstantlyGetAnalyticsOutputSchema,
+  type InstantlyGetAnalyticsInput,
+  type InstantlyGetAnalyticsOutput,
+  SequenceStepSchema,
+  type SequenceStep,
+  instantlyCredential,
+} from './instantly/index.js'
+
 // Google Sheets integrations
 export {
   googleSheetsAppendNode,

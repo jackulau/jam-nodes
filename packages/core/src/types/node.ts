@@ -76,6 +76,10 @@ export interface NodeCredentials {
   apify?: {
     apiToken: string
   }
+  /** Instantly.ai API credentials */
+  instantly?: {
+    apiKey: string
+  }
   /** Google Sheets OAuth2 credentials */
   googleSheets?: {
     clientId: string
