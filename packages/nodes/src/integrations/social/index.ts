@@ -18,7 +18,48 @@ export {
 
 export {
   twitterCredential,
+  redditCredential,
 } from './credentials.js';
+
+export {
+  redditCreatePostNode,
+  RedditCreatePostInputSchema,
+  RedditCreatePostOutputSchema,
+  type RedditCreatePostInput,
+  type RedditCreatePostOutput,
+} from './reddit-create-post.js';
+
+export {
+  redditCreateCommentNode,
+  RedditCreateCommentInputSchema,
+  RedditCreateCommentOutputSchema,
+  type RedditCreateCommentInput,
+  type RedditCreateCommentOutput,
+} from './reddit-create-comment.js';
+
+export {
+  redditReplyToCommentNode,
+  RedditReplyToCommentInputSchema,
+  RedditReplyToCommentOutputSchema,
+  type RedditReplyToCommentInput,
+  type RedditReplyToCommentOutput,
+} from './reddit-reply-to-comment.js';
+
+export {
+  redditSearchPostsNode,
+  RedditSearchPostsInputSchema,
+  RedditSearchPostsOutputSchema,
+  type RedditSearchPostsInput,
+  type RedditSearchPostsOutput,
+} from './reddit-search-posts.js';
+
+export {
+  redditGetPostCommentsNode,
+  RedditGetPostCommentsInputSchema,
+  RedditGetPostCommentsOutputSchema,
+  type RedditGetPostCommentsInput,
+  type RedditGetPostCommentsOutput,
+} from './reddit-get-post-comments.js';
 
 export {
   twitterCreateTweetNode,

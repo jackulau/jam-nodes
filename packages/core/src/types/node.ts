@@ -84,6 +84,14 @@ export interface NodeCredentials {
     refreshToken: string
     expiresAt: number
   }
+  /** Reddit OAuth2 credentials */
+  reddit?: {
+    clientId?: string
+    clientSecret?: string
+    accessToken?: string
+    refreshToken?: string
+    expiresAt?: number
+  }
 }
 
 /**

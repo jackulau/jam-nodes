@@ -1,6 +1,24 @@
 import { z } from 'zod';
 import { defineOAuth2Credential } from '@jam-nodes/core';
 
+export const redditCredential = defineOAuth2Credential({
+  name: 'reddit',
+  displayName: 'Reddit OAuth2',
+  documentationUrl: 'https://www.reddit.com/dev/api/',
+  config: {
+    authorizationUrl: 'https://www.reddit.com/api/v1/authorize',
+    tokenUrl: 'https://www.reddit.com/api/v1/access_token',
+    scopes: ['identity', 'submit', 'read', 'history', 'mysubreddits'],
+  },
+  schema: z.object({
+    clientId: z.string(),
+    clientSecret: z.string(),
+    accessToken: z.string(),
+    refreshToken: z.string().optional(),
+    expiresAt: z.number().optional(),
+  }),
+});
+
 export const twitterCredential = defineOAuth2Credential({
   pkce: true,
   name: 'twitter',
