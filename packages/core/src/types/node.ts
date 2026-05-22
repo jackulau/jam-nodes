@@ -84,6 +84,10 @@ export interface NodeCredentials {
     refreshToken: string
     expiresAt: number
   }
+  /** Google Places API credentials */
+  googlePlaces?: {
+    apiKey: string
+  }
 }
 
 /**

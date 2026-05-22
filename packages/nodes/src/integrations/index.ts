@@ -275,3 +275,29 @@ export {
   type SlackSearchMatch,
   slackCredential,
 } from './slack/index.js'
+
+// Google Places integrations
+export {
+  googlePlacesSearchTextNode,
+  GooglePlacesSearchTextInputSchema,
+  GooglePlacesSearchTextOutputSchema,
+  type GooglePlacesSearchTextInput,
+  type GooglePlacesSearchTextOutput,
+  googlePlacesGetDetailsNode,
+  GooglePlacesGetDetailsInputSchema,
+  GooglePlacesGetDetailsOutputSchema,
+  type GooglePlacesGetDetailsInput,
+  type GooglePlacesGetDetailsOutput,
+  googlePlacesSearchNearbyNode,
+  GooglePlacesSearchNearbyInputSchema,
+  GooglePlacesSearchNearbyOutputSchema,
+  type GooglePlacesSearchNearbyInput,
+  type GooglePlacesSearchNearbyOutput,
+  GooglePlaceSchema,
+  GooglePlaceLocationSchema,
+  GooglePlaceDisplayNameSchema,
+  type GooglePlace,
+  type GooglePlaceLocation,
+  type GooglePlaceDisplayName,
+  googlePlacesCredential,
+} from './google-places/index.js'
