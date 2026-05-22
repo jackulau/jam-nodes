@@ -84,6 +84,10 @@ export interface NodeCredentials {
     refreshToken: string
     expiresAt: number
   }
+  /** Yelp Fusion API credentials */
+  yelp?: {
+    apiKey: string
+  }
 }
 
 /**

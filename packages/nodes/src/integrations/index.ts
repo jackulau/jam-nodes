@@ -275,3 +275,33 @@ export {
   type SlackSearchMatch,
   slackCredential,
 } from './slack/index.js'
+
+// Yelp Fusion integrations
+export {
+  yelpSearchBusinessesNode,
+  YelpSearchBusinessesInputSchema,
+  YelpSearchBusinessesOutputSchema,
+  type YelpSearchBusinessesInput,
+  type YelpSearchBusinessesOutput,
+  yelpGetBusinessDetailsNode,
+  YelpGetBusinessDetailsInputSchema,
+  YelpGetBusinessDetailsOutputSchema,
+  type YelpGetBusinessDetailsInput,
+  type YelpGetBusinessDetailsOutput,
+  yelpGetBusinessReviewsNode,
+  YelpGetBusinessReviewsInputSchema,
+  YelpGetBusinessReviewsOutputSchema,
+  type YelpGetBusinessReviewsInput,
+  type YelpGetBusinessReviewsOutput,
+  YelpBusinessSchema,
+  YelpReviewSchema,
+  YelpCoordinatesSchema,
+  YelpLocationSchema,
+  YelpCategorySchema,
+  type YelpBusiness,
+  type YelpReview,
+  type YelpCoordinates,
+  type YelpLocation,
+  type YelpCategory,
+  yelpCredential,
+} from './yelp/index.js'
