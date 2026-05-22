@@ -84,6 +84,10 @@ export interface NodeCredentials {
     refreshToken: string
     expiresAt: number
   }
+  /** Foursquare Places API credentials */
+  foursquare?: {
+    apiKey: string
+  }
 }
 
 /**

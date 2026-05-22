@@ -275,3 +275,33 @@ export {
   type SlackSearchMatch,
   slackCredential,
 } from './slack/index.js'
+
+// Foursquare Places integrations
+export {
+  foursquareSearchPlacesNode,
+  FoursquareSearchPlacesInputSchema,
+  FoursquareSearchPlacesOutputSchema,
+  type FoursquareSearchPlacesInput,
+  type FoursquareSearchPlacesOutput,
+  foursquareGetPlaceDetailsNode,
+  FoursquareGetPlaceDetailsInputSchema,
+  FoursquareGetPlaceDetailsOutputSchema,
+  type FoursquareGetPlaceDetailsInput,
+  type FoursquareGetPlaceDetailsOutput,
+  foursquareGetPlaceTipsNode,
+  FoursquareGetPlaceTipsInputSchema,
+  FoursquareGetPlaceTipsOutputSchema,
+  type FoursquareGetPlaceTipsInput,
+  type FoursquareGetPlaceTipsOutput,
+  FoursquarePlaceSchema,
+  FoursquareTipSchema,
+  FoursquareGeocodesSchema,
+  FoursquareLocationSchema,
+  FoursquareCategorySchema,
+  type FoursquarePlace,
+  type FoursquareTip,
+  type FoursquareGeocodes,
+  type FoursquareLocation,
+  type FoursquareCategory,
+  foursquareCredential,
+} from './foursquare/index.js'
